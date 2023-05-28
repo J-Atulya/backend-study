@@ -19,8 +19,9 @@ def index(request):
     var3.id = 2
     var3.name = "Font-Type"
     var3.details = "Changes type"
-    
-    return render(request, 'basic.html', {'keydict': var1, 'keydict2': var2, 'keydict3':var3})
+
+    vars = [var1, var2, var3]
+    return render(request, 'basic.html', {'variables' : vars})
 
 def counter(request):
     words = request.POST['text']
