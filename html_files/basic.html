@@ -1,14 +1,8 @@
-<html><body>
+{% load static %}
 
-    {% load static %}
-<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'style1.css' %}">
 
-<h1>Hey all, Welcome to the page</h1>
-<h3>Input your text below</h3>
+<h1>the color changed</h1>
+<h2>I didnt add any color</h2>
+<h3> what about now?</h3>
 
-<form method="post" action = "counter">
-    {% csrf_token %}
-    <textarea name="text" rows="10" cols="25"></textarea><br>
-    <input type="submit">
-
-</body></html>
