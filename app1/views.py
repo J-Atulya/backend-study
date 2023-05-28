@@ -7,7 +7,7 @@ def index(request):
 
 def counter(request):
     #getting the text from the text area
-    words = request.GET['text']
+    words = request.POST['text']
     #counting words and assiging values
     numWords = len(words.split())
     #connecting new file and variables

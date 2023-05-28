@@ -6,7 +6,8 @@
 <h1>Hey all, Welcome to the page</h1>
 <h3>Input your text below</h3>
 
-<form method="get" action = "counter">
+<form method="post" action = "counter">
+    {% csrf_token %}
     <textarea name="text" rows="10" cols="25"></textarea><br>
     <input type="submit">
 
