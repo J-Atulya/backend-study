@@ -6,6 +6,7 @@ def index(request):
     return render(request, 'basic.html')
 
 def counter(request):
-    words = request.POST['text']
-    numOfWords = len(words.split())
-    return render(request, 'countWords.html', {'Numofwords': numOfWords, 'sentence': words})
+    #connecting new file
+    return render(request, 'countWords.html')
+
+
