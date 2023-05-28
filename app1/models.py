@@ -5,3 +5,4 @@ class feature:
     id: int
     name: str
     details: str
+    is_true: bool

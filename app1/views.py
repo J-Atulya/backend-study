@@ -8,16 +8,19 @@ def index(request):
     var1 = feature()
     var1.id = 0
     var1.name = "Font-color"
+    var1.is_true = True
     var1.details = "Changes colors"
     
     var2 = feature()
     var2.id = 1
     var2.name = "Font-style"
+    var2.is_true = False
     var2.details = "Changes Style"
 
     var3 = feature()
     var3.id = 2
     var3.name = "Font-Type"
+    var3.is_true = True
     var3.details = "Changes type"
 
     vars = [var1, var2, var3]
