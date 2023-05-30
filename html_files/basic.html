@@ -2,17 +2,10 @@
 
 <link rel="stylesheet" href="{% static 'style1.css' %}">
 
-<h1>Hi</h1>
 {% for values in variables %}
 <h4>{{values.id}}</h4>
 <h1>{{values.name}}</h1>
 <h2>{{values.details}}</h2>
-<h3vlaues>A set of values added</h3>
-{% if values.is_true %}
-<p>This feature occurs</p>
-{% else %}
-<p> This feature doesnt occur</p>
-{% endif %}
 {% endfor %}
 
 
