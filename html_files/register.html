@@ -1,6 +1,16 @@
 <h1> Sign up in the given form </h1>
 
+<style>
+    h5{
+        color: rebeccapurple;
+    }
+</style>
+
+{% for msg in messages %}
+<h5> msg <br></h5>
+
 <Form method="post" action="register">
+    {% csrf_token %}
     <p>Username</p>
     <input type = "text" name="username" />
     <p>Email</p>
@@ -9,5 +19,5 @@
     <input type = "password" name="password" />
     <p>Repeat Password</p>
     <input type = "password" name="password" />
-    <input type="submit" />
+    <p><input type="submit" /></p>
 </Form>
