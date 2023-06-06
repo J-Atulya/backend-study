@@ -7,6 +7,9 @@ def index(request):
     feat = feature.objects.all()
     return render(request, 'basic.html', {'variables' : feat})
 
+def register(request):
+    return render(request, 'register.html')
+
 def counter(request):
     words = request.POST['text']
     numWords = len(words.split())
