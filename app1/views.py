@@ -20,7 +20,11 @@ def register(request):
         pass2 = request.POST['password2'] 
 
         if password == pass2:
-                       
+            #checking if the email already exists
+            if User.objects.filter(email='mail').exists():
+                messages.info(request, 'Email Already Used')
+                # redirecting back to the refreshed form page with 
+                return redirect('register')        
 
 
     return render(request, 'register.html')
