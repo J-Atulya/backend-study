@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth.models import User, auth
+from django.contrib import messages
 from .models import feature
 
 # Create your views here.
@@ -8,6 +10,19 @@ def index(request):
     return render(request, 'basic.html', {'variables' : feat})
 
 def register(request):
+    
+    if request.method == 'POST':
+        # if the user submits something
+        username = request.POST['username']
+        # this stores the value given to textbox username to this variable
+        mail = request.POST['email']
+        password = request.POST['password']
+        pass2 = request.POST['password2'] 
+
+        if password == pass2:
+                       
+
+
     return render(request, 'register.html')
 
 def counter(request):
