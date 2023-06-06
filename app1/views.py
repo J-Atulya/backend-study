@@ -24,10 +24,24 @@ def register(request):
             if User.objects.filter(email='mail').exists():
                 messages.info(request, 'Email Already Used')
                 # redirecting back to the refreshed form page with 
-                return redirect('register')        
+                return redirect('register')   
 
+            elif User.objects.filter(username='username').exists():
+                messages.info(request,'Username Already Used' )
+                return redirect('register') 
 
-    return render(request, 'register.html')
+            else:
+                # if the email and username is not already in use
+                user1 = User.objects.create_user(username=username, email=mail, password=pass2)
+                user1.save()
+                return redirect('login')
+            
+        else:
+            messages.info(request, 'Password do not match')
+            return redirect('register')
+    
+    else:
+        return render(request, 'register.html')
 
 def counter(request):
     words = request.POST['text']
