@@ -49,4 +49,8 @@ def counter(request):
     numWords = len(words.split())
     return render(request, 'countWords.html', { 'numWords' : numWords})
 
+def loginpage(request):
+    return render(request, 'login.html')
+
+
 
