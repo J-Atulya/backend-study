@@ -2,7 +2,13 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'style.css' %}">
 
+<!-- The given for loop prints the messages given when error occurs -->
+{% for message in messages %}
+<h3>{message}</h3>
+{% endfor %}
 <form action="loginpage" method="POST">
+    <!-- Since a post method is being used, we need to load csrf_token-->
+    {% csrf_token %}
     <p><h3>Username: </h3></p>
     <input type = "text" name = "un"/>
     <p>Password: </p>
