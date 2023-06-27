@@ -50,7 +50,24 @@ def counter(request):
     return render(request, 'countWords.html', { 'numWords' : numWords})
 
 def loginpage(request):
-    return render(request, 'login.html')
+    #we got info from login page and we are storing it in variables
+    if request.method == 'POST':
+        uN = request.POST['un']
+        pW = request.POST['pw'] 
+        #making the user with the given username and password
+        user = auth.authenticate(username = uN, password = pW)
+        #checking if the user exists or not-> returns none if user doesnt exist
+        if user is not None:
+            auth.login(request,user)
+            #user is redirected to the home page?
+            return redirect('/')
+        else:
+            messages.info(request, 'Invalid Credentials')
+            #message is shown in the redirected page which is loginpage
+            return redirect ('login')
+    
+    else:
+        return render(request, 'login.html')
 
 
 
