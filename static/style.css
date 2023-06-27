@@ -2,11 +2,16 @@ h1{
     color: black;
 }
 h2{
-    color: rgb(255, 55, 0);
+    color: rgb(220, 57, 12);
 }
 h3{
-    color: indianred;
+    color: rgb(195, 117, 187);
 }
 h4{
     color: greenyellow;
+}
+.buttonstyles{
+    background-color: aquamarine;
+    font-size: 20px;
+    border-radius: 20%;
 }
