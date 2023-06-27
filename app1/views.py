@@ -43,7 +43,7 @@ def register(request):
     
     else:
         return render(request, 'register.html')
-
+    
 def counter(request):
     words = request.POST['text']
     numWords = len(words.split())
@@ -59,15 +59,19 @@ def loginpage(request):
         #checking if the user exists or not-> returns none if user doesnt exist
         if user is not None:
             auth.login(request,user)
-            #user is redirected to the home page?
+            #user is redirected to the home page, which here is basic.html
             return redirect('/')
         else:
             messages.info(request, 'Invalid Credentials')
             #message is shown in the redirected page which is loginpage
-            return redirect ('login')
+            return redirect ('loginpage')
     
     else:
         return render(request, 'login.html')
 
-
-
+#creating a function to redirect from logout
+def logout(request):
+    #the user is logged out
+    auth.logout(request)
+    #redirected to the basic page
+    return redirect('/')
