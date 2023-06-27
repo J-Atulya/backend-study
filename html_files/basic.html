@@ -19,5 +19,10 @@
 <!-- the following will be when user log in-->
 {% if user.is_authenticated %}
 <!--Checking if the user is logged in-->
-<h1>Hola, you are logged in. Welcome To The basic page</h1>
+<h1>Hi, {{user.username}} you are logged in. Welcome To The basic page</h1>
+<div><a class="buttonstyles" href="logout">Logout </a> </div>
+{% else %}
+Hi, welcome to basic page
+<div><a class="buttonstyles" href="login.html">Login or Signup</a></div>
+{% endif %}
 
