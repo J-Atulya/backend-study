@@ -45,9 +45,11 @@ def register(request):
         return render(request, 'register.html')
     
 def counter(request):
-    words = request.POST['text']
-    numWords = len(words.split())
-    return render(request, 'countWords.html', { 'numWords' : numWords})
+    words = ['SAira', 'Ani V', '55']
+    '''numWords=[]
+    for i in range(3):
+        numWords.append(len(words[i]))'''
+    return render(request, 'countWords.html', {'words':words})
 
 def loginpage(request):
     #we got info from login page and we are storing it in variables
@@ -75,3 +77,7 @@ def logout(request):
     auth.logout(request)
     #redirected to the basic page
     return redirect('/')
+
+#in the url, https:.../post/pk; => pk is a variable
+def post(request, pk):
+    return render(request, 'dynamite.html', {'pk_key': pk})

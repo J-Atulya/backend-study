@@ -1,4 +1,7 @@
 <h3>
-    WORD COUNT : {{numWords}}<br>
-    Thank you for using our website, please visit again
+    {% for i in words %}
+    Want to see whose count is given? Click here
+    <h2><a href="{% url 'post' i %}">WORD</a></h2>
+    <!--Here, we give the link as post function request along with the variable req-->
+    {% endfor %}
 </h3>
